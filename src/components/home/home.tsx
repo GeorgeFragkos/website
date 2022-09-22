@@ -1,7 +1,8 @@
-import { Flex, Box, Container, Text } from "@chakra-ui/react";
+import { Flex, Box, Container } from "@chakra-ui/react";
 import { MotionBox, MotionFlex } from "./motion";
 import Header from "./header";
 import "./style.css";
+import { image } from "../../data/HomeData";
 const ANIMATION_DURATION = 0.5;
 
 const IntroSection = () => {
@@ -27,11 +28,7 @@ const IntroSection = () => {
           mb={[16, 16, "auto"]}
         >
           <MotionBox whileHover={{ scale: 1.2 }} rounded="full" shadow="lg">
-            <img
-              src={require("D:/portfolio/personal_site/src/assets/images/me.jpg")}
-              width="150"
-              height="150"
-            />
+            <img src={image} width="150" height="150" />
           </MotionBox>
         </MotionBox>
         <MotionFlex
