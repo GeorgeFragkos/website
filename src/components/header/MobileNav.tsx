@@ -1,5 +1,4 @@
 import {
-  Button,
   Flex,
   Stack,
   useColorModeValue,
@@ -10,9 +9,9 @@ import {
 import ResumeButton from "./ResumeButton";
 
 import {
-  scrollToAboutSection,
-  scrollToPortfolioSection,
-  scrollToContactSection,
+  scrollToAboutSectionMobile,
+  scrollToPortfolioSectionMobile,
+  scrollToContactSectionMobile,
 } from "../../functions/ScrollToFunctions";
 
 const MobileNav = () => {
@@ -29,7 +28,7 @@ const MobileNav = () => {
           as={Link}
           justify={"space-between"}
           align={"center"}
-          onClick={scrollToAboutSection}
+          onClick={scrollToAboutSectionMobile}
           _hover={{
             textDecoration: "none",
           }}
@@ -45,7 +44,7 @@ const MobileNav = () => {
           py={2}
           as={Link}
           justify={"space-between"}
-          onClick={scrollToPortfolioSection}
+          onClick={scrollToPortfolioSectionMobile}
           align={"center"}
           _hover={{
             textDecoration: "none",
@@ -62,7 +61,7 @@ const MobileNav = () => {
           py={2}
           as={Link}
           justify={"space-between"}
-          onClick={scrollToContactSection}
+          onClick={scrollToContactSectionMobile}
           align={"center"}
           _hover={{
             textDecoration: "none",

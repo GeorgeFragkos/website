@@ -16,26 +16,11 @@ import { useEffect, useState } from "react";
 import DesktopNav from "./DesktopNav";
 import ResumeButton from "./ResumeButton";
 import MobileNav from "./MobileNav";
-let isMobile = false;
+import WindowSize from "../../hooks/windowSize";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
-
-  const [width, setWidth] = useState(window.innerWidth);
-  const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth);
-    isMobile = window.innerWidth < 768 ? true : false;
-  };
-  // call your useEffect
-  useEffect(() => {
-    //At the first execution
-    handleWindowSizeChange();
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
+  let isMobile = WindowSize();
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box>

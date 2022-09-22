@@ -4,23 +4,10 @@ import ContactButtons from "./ContactButtons";
 import ContactForm from "./ContactForm";
 import ContactHeader from "./ContactHeader";
 import ContactWrapper from "./ContactWrapper";
+import WindowSize from "../../hooks/windowSize";
 
-let isMobile = false;
 export default function Contact() {
-  const [width, setWidth] = useState(window.innerWidth);
-  const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth);
-    isMobile = window.innerWidth < 768 ? true : false;
-  };
-  useEffect(() => {
-    //At the first execution
-    handleWindowSizeChange();
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
+  let isMobile = WindowSize();
   return (
     <ContactWrapper>
       <Box>

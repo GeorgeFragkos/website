@@ -1,14 +1,4 @@
-import {
-  Box,
-  Container,
-  Text,
-  Image,
-  Flex,
-  Grid,
-  GridItem,
-  Stack,
-  Center,
-} from "@chakra-ui/react";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 import AboutHeader from "./AboutHeader";
 import AboutCard from "../cards/AboutCard";
 import { MotionBox, MotionFlex } from "../home/motion";

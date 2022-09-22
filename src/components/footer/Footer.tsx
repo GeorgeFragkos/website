@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import "./footer.css";
 import { SocialIcon } from "react-social-icons";
+import { linkedIn, discord, github, text, logo } from "../../data/FooterData";
 
 export default function Footer() {
   return (
@@ -34,29 +35,18 @@ export default function Footer() {
               ml: 8,
             }}
           >
-            Logo
+            {logo}
           </Flex>
           <Flex>
             <Text pt={3} px={10} fontSize={"sm"} textAlign={"left"}>
-              © George Fragkos Software Developer
+              {text}
             </Text>
             <Spacer />
             <Spacer />
             <Stack direction={"row"} spacing={5} pr={5} pt={3}>
-              <SocialIcon
-                url="https://www.linkedin.com/in/george-fragkos-076304243/"
-                style={{ height: 35, width: 35 }}
-              />
-
-              <SocialIcon
-                url="https://discord.com/channels/GeorgeFragkos#6465"
-                style={{ height: 35, width: 35 }}
-              />
-
-              <SocialIcon
-                url="https://github.com/GeorgeFragkos"
-                style={{ height: 35, width: 35 }}
-              />
+              <SocialIcon url={linkedIn} style={{ height: 35, width: 35 }} />
+              <SocialIcon url={github} style={{ height: 35, width: 35 }} />
+              <SocialIcon url={discord} style={{ height: 35, width: 35 }} />
             </Stack>
           </Flex>
         </Box>

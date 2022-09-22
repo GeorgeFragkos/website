@@ -1,4 +1,4 @@
-import { Flex, Box, Container } from "@chakra-ui/react";
+import { Flex, Box, Container, Text } from "@chakra-ui/react";
 import { MotionBox, MotionFlex } from "./motion";
 import Header from "./header";
 import "./style.css";
@@ -67,22 +67,10 @@ const IntroSection = () => {
               </Header>
             </MotionBox>
           </Box>
-          <Box as="h2" fontSize="2xl" fontWeight="400" textAlign="left">
-            My name is{" "}
-            <Box as="strong" fontWeight="600">
-              George
-            </Box>{" "}
-            and I&apos;m a{" "}
-            <Box as="span" whiteSpace="nowrap">
-              Undergraduate student
-            </Box>{" "}
-            <Box as="span" whiteSpace="nowrap">
-              focused on web development&nbsp;
-            </Box>
-            from{" "}
-            <Box as="span" whiteSpace="nowrap">
-              Greece.
-            </Box>
+          <Box as="h2" fontSize="2xl" fontWeight="400" mt={3} textAlign="left">
+            {" "}
+            My name is <strong>George</strong> and I&apos;m a Undergraduate
+            student focused on web development from Greece
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
             This is my personal site, where I write about the things I&apos;m
