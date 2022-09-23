@@ -9,6 +9,7 @@ import {
   Textarea,
   useColorModeValue,
   VStack,
+  useToast,
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
@@ -16,21 +17,31 @@ import { BsPerson } from "react-icons/bs";
 import { MdOutlineEmail } from "react-icons/md";
 
 function ContactForm() {
+  const toast = useToast();
   const form = useRef(null);
   const emailServiceID = process.env.REACT_APP_EMAIL_SERVICE_ID;
   const emailTemplateID = process.env.REACT_APP_EMAIL_TEMPLATE_ID;
   const publicKey = process.env.REACT_APP_PUBLIC_KEY;
   const sendEmail = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     emailjs
       .sendForm(emailServiceID!, emailTemplateID!, form.current!, publicKey)
       .then(
         (result) => {
-          console.log(result.text);
+          toast({
+            title: "Email sended.",
+            status: "success",
+            duration: 4000,
+            isClosable: true,
+          });
         },
         (error) => {
-          console.log(error.text);
+          toast({
+            title: `${error.message}`,
+            status: "success",
+            duration: 2000,
+            isClosable: true,
+          });
         }
       );
   };
