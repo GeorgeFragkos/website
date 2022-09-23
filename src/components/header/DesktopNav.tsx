@@ -27,6 +27,7 @@ const DesktopNav = () => {
             <Flex>
               <Link
                 pr={10}
+                pt={"60px"}
                 fontWeight={500}
                 fontSize="2xl"
                 onClick={scrollToAboutSection}
@@ -40,6 +41,7 @@ const DesktopNav = () => {
               </Link>
               <Link
                 pr={10}
+                pt={"60px"}
                 fontWeight={500}
                 fontSize="2xl"
                 color={linkColor}
@@ -53,6 +55,7 @@ const DesktopNav = () => {
               </Link>
               <Link
                 pr={7}
+                pt={"60px"}
                 onClick={scrollToContactSection}
                 fontWeight={500}
                 fontSize="2xl"

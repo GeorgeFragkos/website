@@ -10,13 +10,14 @@ import {
   useBreakpointValue,
   useDisclosure,
   useColorMode,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { useEffect, useState } from "react";
 import DesktopNav from "./DesktopNav";
 import ResumeButton from "./ResumeButton";
 import MobileNav from "./MobileNav";
 import WindowSize from "../../hooks/windowSize";
+import { logoDark, logoLight } from "../../data/FooterData";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -28,6 +29,7 @@ export default function Header() {
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
+        height={"80px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={4}
@@ -56,7 +58,11 @@ export default function Header() {
             fontSize="2xl"
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            {colorMode === "dark" ? (
+              <Image width="150px" height="150px" src={logoDark} />
+            ) : (
+              <Image width="150px" height="150px" src={logoLight} />
+            )}
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>

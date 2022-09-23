@@ -5,12 +5,22 @@ import {
   useColorModeValue,
   Spacer,
   Stack,
+  useColorMode,
+  Image,
 } from "@chakra-ui/react";
 import "./footer.css";
 import { SocialIcon } from "react-social-icons";
-import { linkedIn, discord, github, text, logo } from "../../data/FooterData";
+import {
+  linkedIn,
+  discord,
+  github,
+  text,
+  logoDark,
+  logoLight,
+} from "../../data/FooterData";
 
 export default function Footer() {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <footer>
       <Box
@@ -35,7 +45,11 @@ export default function Footer() {
               ml: 8,
             }}
           >
-            {logo}
+            {colorMode === "dark" ? (
+              <Image width="100px" height="100px" src={logoDark} />
+            ) : (
+              <Image width="100px" height="100px" src={logoLight} />
+            )}
           </Flex>
           <Flex>
             <Text pt={3} px={10} fontSize={"sm"} textAlign={"left"}>
