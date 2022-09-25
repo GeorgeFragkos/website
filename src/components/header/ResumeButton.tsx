@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/react";
 
 const ResumePath =
-  "https://res.cloudinary.com/distgtnid/raw/upload/v1663258949/Resume/Resume_aq81nf.docx";
+  "https://res.cloudinary.com/distgtnid/raw/upload/v1664117954/Resume/Resume_u76hzf.docx";
 
 type Props = {
   isMobile: boolean;
